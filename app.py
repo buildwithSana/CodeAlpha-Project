@@ -10,6 +10,7 @@ def home():
 @app.route('/translate', methods=['POST'])
 def translate_text():
     data = request.get_json()
+    text = data.get("text")
     target = data.get("target")
 
     if not text or not target:
